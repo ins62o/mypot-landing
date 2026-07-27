@@ -322,7 +322,6 @@
 }
 
 .record-card-shell {
-  cursor: pointer;
   opacity: 0;
   transform: translateY(calc(var(--card-y, 0px) + 86px)) scale(0.9) rotate(calc(var(--card-rotate, 0deg) - 8deg));
   transform-origin: 50% 92%;
@@ -338,16 +337,22 @@
   transform: translateY(var(--card-y, 0px)) scale(1) rotate(var(--card-rotate, 0deg));
 }
 
-.record-section.is-visible .record-card-shell:hover {
-  transform: translateY(var(--card-y, 0px)) scale(1.035) rotate(0deg);
-  transition:
-    opacity 180ms ease,
-    transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  transition-delay: 0ms;
-}
+@media (hover: hover) and (pointer: fine) {
+  .record-card-shell {
+    cursor: pointer;
+  }
 
-.record-section.is-visible .record-card-shell:hover .record-card {
-  animation-play-state: paused;
+  .record-section.is-visible .record-card-shell:hover {
+    transform: translateY(var(--card-y, 0px)) scale(1.035) rotate(0deg);
+    transition:
+      opacity 180ms ease,
+      transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: 0ms;
+  }
+
+  .record-section.is-visible .record-card-shell:hover .record-card {
+    animation-play-state: paused;
+  }
 }
 
 .record-photo {
