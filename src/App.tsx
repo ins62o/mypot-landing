@@ -121,7 +121,7 @@ function LandingPage() {
             <h1 id="hero-title">
               오늘의 순간을
               <br />
-              <mark>마이퐁</mark>에 담아보세요
+              <mark>마이폿</mark>에 담아보세요
             </h1>
             <span>가족, 연인, 친구와 사진·영상·글·음성으로 함께 기록하는 우리만의 추억앱</span>
 
