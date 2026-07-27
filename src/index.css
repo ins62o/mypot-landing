@@ -1,17 +1,20 @@
 :root {
   --font-main:
-    "TmoneyRoundWind",
+    "Pretendard",
     "Apple SD Gothic Neo",
     "Noto Sans KR",
     sans-serif;
+  --font-display:
+    "TmoneyRoundWind",
+    var(--font-main);
 }
 
 @font-face {
   font-display: swap;
-  font-family: "TmoneyRoundWind";
+  font-family: "Pretendard";
   font-style: normal;
-  font-weight: 400;
-  src: url("../assets/fonts/TmoneyRoundWindRegular.ttf") format("truetype");
+  font-weight: 100 900;
+  src: url("/assets/fonts/PretendardVariable.woff2") format("woff2");
 }
 
 @font-face {
@@ -19,7 +22,7 @@
   font-family: "TmoneyRoundWind";
   font-style: normal;
   font-weight: 700 900;
-  src: url("../assets/fonts/TmoneyRoundWindExtraBold.ttf") format("truetype");
+  src: url("../assets/fonts/TmoneyRoundWindExtraBold.otf") format("opentype");
 }
 
 :root {
@@ -78,4 +81,10 @@ p {
 :focus-visible {
   outline: 3px solid rgba(246, 200, 76, 0.64);
   outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

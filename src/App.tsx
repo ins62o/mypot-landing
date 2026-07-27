@@ -1,12 +1,12 @@
 import { AudioLines, Heart, Image, LockKeyhole, MessageCircle, Pencil, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import googleIcon from '../assets/google-play-icon.png'
-import heroVisual from '../assets/hero-visual-mascot.png'
+import googleIcon from '../assets/google-play-icon.webp'
+import heroVisual from '../assets/hero-visual-mascot.webp'
 import appleIcon from '../assets/ic_apple_login.svg'
 import logo from '../assets/logo.webp'
-import chatVisual from '../assets/chat-section/chat-phone-couple-balanced-transparent.png'
-import photoMemory from '../assets/record-section/photo-memory.png'
-import videoMemory from '../assets/record-section/video-memory.png'
+import chatVisual from '../assets/chat-section/chat-phone-couple-balanced-transparent.webp'
+import photoMemory from '../assets/record-section/photo-memory.webp'
+import videoMemory from '../assets/record-section/video-memory.webp'
 import './App.css'
 
 function App() {
@@ -111,7 +111,7 @@ function App() {
               <br />
               <mark>마이폿</mark>에 담아보세요
             </h1>
-            <span>소중한 사람들과 더 가까워지는 우리만의 추억 공간</span>
+            <span>가족, 연인, 친구와 사진·영상·글·음성으로 함께 기록하는 우리만의 추억앱</span>
 
             <div className="store-actions" aria-label="앱 다운로드">
               <a className="store-button" href="#download" aria-label="App Store에서 다운로드">
@@ -273,7 +273,7 @@ function App() {
               개인정보처리방침
             </a>
             <span aria-hidden="true">|</span>
-            <a href="http://pf.kakao.com/_HFxfxnX/chat" target="_blank" rel="noreferrer">
+            <a href="https://pf.kakao.com/_HFxfxnX/chat" target="_blank" rel="noreferrer">
               고객센터
             </a>
             <span aria-hidden="true">|</span>
