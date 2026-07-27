@@ -16,6 +16,10 @@ dist-ssr
 .tmp-lighthouse/
 lighthouse-report*.json
 
+# Local Codex workspace skills
+.agents/
+skills-lock.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
