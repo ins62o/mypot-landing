@@ -1,5 +1,6 @@
 import { AudioLines, Heart, Image, LockKeyhole, MessageCircle, Pencil, Play } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
+import { Link, Route, Switch } from 'react-router-dom'
 import googleIcon from '../assets/google-play-icon.webp'
 import heroVisual from '../assets/hero-visual-mascot.webp'
 import appleIcon from '../assets/ic_apple_login.svg'
@@ -8,8 +9,12 @@ import chatVisual from '../assets/chat-section/chat-phone-couple-balanced-transp
 import photoMemory from '../assets/record-section/photo-memory.webp'
 import videoMemory from '../assets/record-section/video-memory.webp'
 import './App.css'
+import { PageMeta } from './components/PageMeta'
+import { ScrollToTop } from './components/ScrollToTop'
+import { AccountDeletionPage } from './pages/AccountDeletionPage'
+import { PrivacyPage } from './pages/PrivacyPage'
 
-function App() {
+function LandingPage() {
   const [pocketCount, setPocketCount] = useState(0)
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false)
   const [isRecordVisible, setIsRecordVisible] = useState(false)
@@ -90,6 +95,13 @@ function App() {
 
   return (
     <>
+      <PageMeta
+        title="마이폿 | 함께 기록하는 추억앱"
+        description="마이폿은 가족, 연인, 친구와 사진·영상·글·음성으로 오늘의 순간을 함께 기록하는 추억앱입니다."
+        canonicalPath="/"
+        ogTitle="마이폿 | 함께 기록하는 추억앱"
+        ogDescription="가족, 연인, 친구와 함께 오늘의 순간을 마이폿에 담아보세요."
+      />
       <header className={`site-header${isHeaderScrolled ? ' is-scrolled' : ''}`}>
         <a className="brand" href="#top" aria-label="마이폿 홈">
           <img src={logo} alt="MyPot" />
@@ -265,13 +277,9 @@ function App() {
         <footer className="site-footer">
           <img src={logo} alt="MyPot" />
           <nav aria-label="마이폿 하단 메뉴">
-            <a href="/account-deletion/">
-              이용약관
-            </a>
+            <Link to="/account-deletion/">계정 삭제 안내</Link>
             <span aria-hidden="true">|</span>
-            <a href="/privacy/">
-              개인정보처리방침
-            </a>
+            <Link to="/privacy/">개인정보처리방침</Link>
             <span aria-hidden="true">|</span>
             <a href="https://pf.kakao.com/_HFxfxnX/chat" target="_blank" rel="noreferrer">
               고객센터
@@ -285,6 +293,20 @@ function App() {
         </footer>
       </main>
 
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/privacy/" component={PrivacyPage} />
+        <Route path="/account-deletion/" component={AccountDeletionPage} />
+        <Route component={LandingPage} />
+      </Switch>
     </>
   )
 }
