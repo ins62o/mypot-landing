@@ -1,32 +1,17 @@
-# React + TypeScript + Vite
+# 🪴 MyPot Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+> **추억은 함께 나눌 때 더 특별해져요.**
+> 가족의 대화와 기록을 한곳에 담는 가족 소통 앱, 마이폿(MyPot)의 공식 랜딩페이지입니다.
 
-Currently, two official plugins are available:
+<br />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<div align="center">
 
-## React Compiler
+### 추억은 함께 나눌 때 더 특별해져요.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+대화와 기록이 한곳에 모여
+우리만의 하루가 이어져요.
 
-## Expanding the Oxlint configuration
+**MyPot**
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+</div>
