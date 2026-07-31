@@ -13,9 +13,11 @@ import { PageMeta } from './components/PageMeta'
 import { ScrollToTop } from './components/ScrollToTop'
 import { AccountDeletionPage } from './pages/AccountDeletionPage'
 import { PrivacyPage } from './pages/PrivacyPage'
+import { getPublicPocketCount } from './services/pocketMetrics'
 
 function LandingPage() {
   const [pocketCount, setPocketCount] = useState(0)
+  const [targetPocketCount, setTargetPocketCount] = useState<number | null>(null)
   const [isHeaderScrolled, setIsHeaderScrolled] = useState(false)
   const [isRecordVisible, setIsRecordVisible] = useState(false)
   const [isChatVisible, setIsChatVisible] = useState(false)
@@ -23,7 +25,26 @@ function LandingPage() {
   const chatSectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const targetCount = 98
+    const controller = new AbortController()
+
+    getPublicPocketCount(controller.signal)
+      .then(setTargetPocketCount)
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === 'AbortError') {
+          return
+        }
+
+        console.error('운영 주머니 수를 불러오지 못했습니다.', error)
+      })
+
+    return () => controller.abort()
+  }, [])
+
+  useEffect(() => {
+    if (targetPocketCount === null) {
+      return
+    }
+
     const duration = 2200
     let animationFrame = 0
     const startTime = performance.now()
@@ -32,7 +53,7 @@ function LandingPage() {
       const progress = Math.min((currentTime - startTime) / duration, 1)
       const easedProgress = 1 - (1 - progress) ** 3
 
-      setPocketCount(Math.round(targetCount * easedProgress))
+      setPocketCount(Math.round(targetPocketCount * easedProgress))
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animateCount)
@@ -42,7 +63,7 @@ function LandingPage() {
     animationFrame = requestAnimationFrame(animateCount)
 
     return () => cancelAnimationFrame(animationFrame)
-  }, [])
+  }, [targetPocketCount])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,9 +132,19 @@ function LandingPage() {
       <main className="landing-page" id="top">
         <section className="hero-section" id="intro" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <div className="pocket-count-card" aria-label={`${pocketCount}개의 주머니가 함께 하고 있어요`}>
+            <div
+              className="pocket-count-card"
+              aria-label={
+                targetPocketCount === null
+                  ? '함께하는 주머니 수를 불러오는 중이에요'
+                  : `${pocketCount}개의 주머니가 함께 하고 있어요`
+              }
+            >
               <strong>
-                <span className="pocket-count-number">{pocketCount}</span>개의 주머니가
+                <span className="pocket-count-number">
+                  {targetPocketCount === null ? '—' : pocketCount.toLocaleString('ko-KR')}
+                </span>
+                개의 주머니가
               </strong>
               <span>함께 하고 있어요</span>
             </div>
