@@ -113,24 +113,24 @@ export function PrivacyPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td>Google LLC</td>
-                  <td>인증, 데이터베이스, 서버 기능, 푸시 알림</td>
-                  <td>계정, 콘텐츠, 기기·알림 및 운영 정보</td>
+                  <td data-label="서비스 제공자">Google LLC</td>
+                  <td data-label="처리 목적">인증, 데이터베이스, 서버 기능, 푸시 알림</td>
+                  <td data-label="관련 정보">계정, 콘텐츠, 기기·알림 및 운영 정보</td>
                 </tr>
                 <tr>
-                  <td>Amazon Web Services, Inc.</td>
-                  <td>사진·영상·음성 파일 저장과 전송</td>
-                  <td>미디어 파일 및 미디어 메타데이터</td>
+                  <td data-label="서비스 제공자">Amazon Web Services, Inc.</td>
+                  <td data-label="처리 목적">사진·영상·음성 파일 저장과 전송</td>
+                  <td data-label="관련 정보">미디어 파일 및 미디어 메타데이터</td>
                 </tr>
                 <tr>
-                  <td>주식회사 카카오</td>
-                  <td>카카오 로그인과 이용자가 선택한 초대 공유</td>
-                  <td>로그인 응답 및 이용자가 공유한 초대 정보</td>
+                  <td data-label="서비스 제공자">주식회사 카카오</td>
+                  <td data-label="처리 목적">카카오 로그인과 이용자가 선택한 초대 공유</td>
+                  <td data-label="관련 정보">로그인 응답 및 이용자가 공유한 초대 정보</td>
                 </tr>
                 <tr>
-                  <td>Apple Inc.</td>
-                  <td>Apple로 로그인</td>
-                  <td>로그인 응답과 Apple이 제공한 계정 정보</td>
+                  <td data-label="서비스 제공자">Apple Inc.</td>
+                  <td data-label="처리 목적">Apple로 로그인</td>
+                  <td data-label="관련 정보">로그인 응답과 Apple이 제공한 계정 정보</td>
                 </tr>
               </tbody>
             </table>

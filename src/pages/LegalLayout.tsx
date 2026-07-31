@@ -49,6 +49,17 @@ export function LegalLayout({ eyebrow, title, intro, dateLabel, toc, footer, chi
             ))}
           </nav>
 
+          <details className="legal-toc-mobile">
+            <summary>목차 보기</summary>
+            <nav aria-label="모바일 목차">
+              {toc.map((item) => (
+                <a href={item.href} key={item.href}>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </details>
+
           <article className="legal-content">{children}</article>
         </div>
       </main>
