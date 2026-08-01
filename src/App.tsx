@@ -134,15 +134,11 @@ function LandingPage() {
           <div className="hero-copy">
             <div
               className="pocket-count-card"
-              aria-label={
-                targetPocketCount === null
-                  ? '함께하는 주머니 수를 불러오는 중이에요'
-                  : `${pocketCount}개의 주머니가 함께 하고 있어요`
-              }
+              aria-label={`${pocketCount}개의 주머니가 함께 하고 있어요`}
             >
               <strong>
                 <span className="pocket-count-number">
-                  {targetPocketCount === null ? '—' : pocketCount.toLocaleString('ko-KR')}
+                  {pocketCount.toLocaleString('ko-KR')}
                 </span>
                 개의 주머니가
               </strong>
