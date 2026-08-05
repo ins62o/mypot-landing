@@ -12,6 +12,7 @@ import './App.css'
 import { PageMeta } from './components/PageMeta'
 import { ScrollToTop } from './components/ScrollToTop'
 import { AccountDeletionPage } from './pages/AccountDeletionPage'
+import { OperationPolicyPage } from './pages/OperationPolicyPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { getPublicPocketCount } from './services/pocketMetrics'
 
@@ -308,6 +309,8 @@ function LandingPage() {
             <span aria-hidden="true">|</span>
             <Link to="/privacy/">개인정보처리방침</Link>
             <span aria-hidden="true">|</span>
+            <Link to="/operation-policy/">운영정책</Link>
+            <span aria-hidden="true">|</span>
             <a href="https://pf.kakao.com/_HFxfxnX/chat" target="_blank" rel="noreferrer">
               고객센터
             </a>
@@ -332,6 +335,7 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <Route path="/privacy/" component={PrivacyPage} />
         <Route path="/account-deletion/" component={AccountDeletionPage} />
+        <Route path="/operation-policy/" component={OperationPolicyPage} />
         <Route component={LandingPage} />
       </Switch>
     </>
