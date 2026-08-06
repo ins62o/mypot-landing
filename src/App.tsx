@@ -157,7 +157,13 @@ function LandingPage() {
             <span>가족, 연인, 친구와 사진·영상·글·음성으로 함께 기록하는 우리만의 추억앱</span>
 
             <div className="store-actions" aria-label="앱 다운로드">
-              <a className="store-button" href="#download" aria-label="App Store에서 다운로드">
+              <a
+                className="store-button"
+                href="https://apps.apple.com/kr/app/%EB%A7%88%EC%9D%B4%ED%8F%BF/id6795826766"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="App Store에서 마이폿 다운로드"
+              >
                 <img src={appleIcon} alt="" aria-hidden="true" />
                 <strong>App Store</strong>
               </a>
