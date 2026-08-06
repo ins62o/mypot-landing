@@ -27,6 +27,7 @@ export function LegalLayout({ eyebrow, title, intro, dateLabel, toc, footer, chi
           <nav className="legal-nav" aria-label="정책 페이지">
             <NavLink to="/privacy/">개인정보처리방침</NavLink>
             <NavLink to="/account-deletion/">계정 삭제 안내</NavLink>
+            <NavLink to="/operation-policy/">운영정책</NavLink>
           </nav>
         </div>
       </header>

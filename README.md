@@ -15,3 +15,10 @@
 **💛 MyPot 💛**
 
 </div>
+
+## 주요 페이지
+
+- 홈: /
+- 개인정보처리방침: /privacy/
+- 계정 삭제 안내: /account-deletion/
+- 운영정책: /operation-policy/
