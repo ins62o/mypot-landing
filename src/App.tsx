@@ -164,7 +164,13 @@ function LandingPage() {
                 <img src={appleIcon} alt="" aria-hidden="true" />
                 <strong>App Store</strong>
               </a>
-              <a className="store-button" href="#download" aria-label="Google Play에서 다운로드">
+              <a
+                className="store-button"
+                href="https://play.google.com/store/apps/details?id=com.mypot"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Google Play에서 다운로드"
+              >
                 <img src={googleIcon} alt="" aria-hidden="true" />
                 <strong>Google Play</strong>
               </a>
